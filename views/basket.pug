@@ -1,0 +1,35 @@
+extends layout
+
+block content
+
+  if user
+    if products
+      section.section1-basket
+        .greeting
+          h2.greeting__title--basket your shopping bag
+          p.greeting__description--basket Items reserved for limited time only
+      
+      section.section2-basket
+        .products
+          .product
+            .section__img product
+            .section__title title
+            .section__description count
+            .section__status status
+          each product in products
+            form(method="POST").product
+              .product__img: img(src="../img/" + product.img + ".jpg", width="95" alt="")
+              input(name="id" value=product.id)
+              .section__title= product.name
+              input(name="quantity" placeholder="1")
+              button.product__status buy now
+    else
+      section.section1-basket
+        .error-login-wrapper
+          h2 There is no products yet
+          button.button-primary: a(href="laptops/") shop
+  else
+    section.section1-basket
+      .error-login-wrapper
+        h2 You should log in first
+        button.button-primary: a(href="users/login") login

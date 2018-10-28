@@ -1,0 +1,430 @@
+@import 'colors'
+@import 'header'
+
+*
+  margin: 0
+  padding: 0
+
+html,
+body
+  width: 100%
+  height: 100%
+
+body
+  width: 90%
+  margin: auto
+
+ul 
+  display: flex
+  li
+    list-style: none
+    a
+      text-decoration: none
+      text-transform: capitalize
+
+button
+  cursor: pointer
+  text-transform: uppercase
+
+.wrapper
+  display: flex
+  flex-direction: column
+  height: 100%
+
+.content
+  flex: 1 0 auto
+
+.footer
+  flex: 0 0 auto
+  margin-top: 40px
+
+// header
+.navbar
+  display: flex
+  justify-content: space-between
+  align-items: center
+  width: 100%
+  height: $navigation-height
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1)
+
+.navigation
+  display: flex
+  justify-content: space-between
+  align-items: center
+  width: 40%
+  height: $navigation-height
+  &__link
+    font-size: .875rem
+    color: $navigation-links-clr
+  &--right
+    display: flex
+    justify-content: space-between
+    width: 10%
+
+// section1
+.section1
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  min-height: 600px
+  padding: 20px 0
+  margin: 110px 0 60px 0
+  background: url(../img/home-bg.png)
+  background-size: cover
+
+[class^="greeting__title"]
+  font-size: 4.5rem
+  color: $titles-clr
+  text-transform: uppercase
+
+[class^="greeting__description"]
+  color: $descriptions-clr
+  font-size: 1.5rem
+  font-style: italic
+  letter-spacing: 0.075rem
+
+.home-greeting
+  margin-top: -240px
+
+.greeting
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  &__button
+    width: 227px
+    height: 58px
+    background: none
+    border: 1px solid #959595
+    margin-top: 80px
+  &__link
+    color: $buttons-clr
+    font-size: 0.875rem
+
+.button-primary
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 140px
+  height: 40px
+  background: none
+  border: 1px solid #959595
+  margin-top: 20px
+
+// check
+
+.goods
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+
+.good
+  display: flex
+  flex-direction: column
+  justify-content: center
+  // align-items: center
+  width: 208px
+  height: 350px
+  // not good
+  margin-bottom: 30px
+  &__img
+    width: 200px
+    height: 200px
+    // height: 254px
+    border: 1px solid #e5e5e5
+  &__title
+    color: $titles-clr
+    font-weight: 700
+    font-size: 0.875rem
+    cursor: pointer
+  &__description
+    height: 110px
+    overflow: hidden
+    font-size: .8rem
+  &__price
+    font-size: 1.2rem
+    font-weight: 700
+
+// footer
+footer 
+  width: 100%
+  height: 159px
+
+.categories
+  display: flex
+  justify-content: space-between
+
+.category
+  &__list
+    flex-direction: column
+  &__title
+    color: $titles-clr
+    font-size:  0.875rem
+    text-transform: uppercase
+  &__item
+    &--social
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 30px
+      height: 30px
+      cursor: pointer
+      border: 1px solid $social-link-clr
+      margin-right: 5px
+      &:last-child
+        margin-right: 0
+      i
+        color: $social-link-clr
+
+$one: #d2d2d2
+$two: #bbbbbb
+$three: #dbdbdb
+$four: #606060
+$five: #cacaca
+$six: #bbbbbb
+$seven: #d7d7d7
+$eight: #c2c2c2
+$nine: #606060
+$ten: #d0d0d0
+
+.section2
+  display: grid
+  width: 100%
+  height: 600px
+  color: #fff
+  grid-template-areas: "one two three four" "one five six seven" "eight nine ten seven"
+  padding: 20px 0 60px 0
+  // grid-template-rows: 50px 1fr 30px
+  // grid-template-columns: 150px 1fr
+
+[class*="square"]
+  display: flex
+  justify-content: center
+  align-items: center
+  text-transform: uppercase
+  font-weight: 700
+
+.square-1
+  grid-area: one
+  background-color: $one
+
+.square-2
+  grid-area: two
+  background-color: $two
+
+.square-3
+  grid-area: three
+  background-color: $three
+
+.square-4
+  grid-area: four
+  background-color: $four
+
+.square-5
+  grid-area: five
+  background-color: $five
+
+.square-6
+  grid-area: six
+  background-color: $six
+
+.square-7
+  grid-area: seven
+  background-color: $seven
+
+.square-8
+  grid-area: eight
+  background-color: $eight
+
+.square-9
+  grid-area: nine
+  background-color: $nine
+
+.square-10
+  grid-area: ten
+  background-color: $ten
+
+// basket
+
+// section1
+.section1-basket
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  min-height: 300px
+  padding: 20px 0
+
+.greeting__title--basket
+  font-size: 2.25rem
+
+.greeting__description--basket
+  font-size: 1.125rem
+
+.products
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
+.product
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-bottom: 10px
+
+.product:nth-of-type(1)
+  border-bottom: 2px solid #e5e5e5
+
+[class*="section__"]
+  color: #909090
+  text-transform: uppercase
+  font-size: 0.75rem
+
+.product__img
+  width: 98px
+  height: 98px
+  background-color: #f7f7f7
+  border: 1px solid #e5e5e5
+
+// login
+.section1-login
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 100%
+  // background-color: rgba(0, 0, 0, .2)
+  background: url("../img/bg.jpeg")
+  background-size: cover
+
+.login-form,
+.login-form--register
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  align-items: center
+  width: 400px
+  height: 400px
+  // background-color: rgba(0, 0, 0, .4)
+  background: rgba(255, 255, 255, .8)
+  box-shadow: 2px 4px 40px 0px rgba(0, 0, 0, 0.45)
+  &__title
+    text-transform: uppercase
+  &__button
+    width: 192px
+    height: 49px
+    color: #fff
+    border: 1px solid #e67429
+    background-color: #f68236
+  &__note
+    color: #f68236
+    font-size: 0.75rem
+    font-style: italic
+
+.login-form--register
+  height: 500px
+
+.login-form__logo
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 85px
+  height: 85px
+  cursor: pointer
+  border: 1px solid #fff
+  background-color: rgba(255, 255, 255, 0.1)
+  margin-bottom: 40px
+  &--link
+    color: #fff
+    font-size: 1.876rem
+    text-transform: uppercase
+
+.form-group
+  display: flex
+  flex-direction: column
+  &__input
+    width: 286px
+    height: 35px
+    border: 1px solid #c2c2c2
+
+  &__text
+    text-transform: uppercase
+    font-size: 0.75rem
+    color: #606060
+
+.alert-error
+  color: #a94442
+  background-color: #f2dede
+  border-color: #ebccd1
+
+.alert-success_msg
+  color: #3c763d
+  background-color: #dff0d8
+  border-color: #d639c6
+
+.btn-buy
+  width: 227px
+  height: 58px
+  background: none
+  border: 1px solid #959595
+  margin-top: 80px
+
+.error-login-wrapper
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+.characteristic
+  width: 40%
+  display: flex
+  justify-content: space-between
+
+.product-input
+  font-size: 31px
+  border: none
+
+input[name="id"],
+input[name="img"]
+  display: none
+
+input:disabled
+  background: #fff
+
+.product-char
+  text-transform: capitalize
+
+.product-wrapper
+  margin: 20px 0
+
+button.product__status
+  width: 100px
+  height: 40px
+  border: none
+  background: none
+  outline: none
+  font-weight: 700
+  color: #fff
+  background-color: #ccc
+  border-radius: 5px
+
+.section1-about
+  width: 100%
+  height: 800px
+  background: url(../img/about-bg.jpeg)
+  background-size: cover
+  margin: 40px 0
+
+.about-info
+  width: 40%
+  padding: 40px
+  color: #000
+  box-sizing: border-box
+  p
+    font-size: 1.2em
+
+input[name="quantity"]
+  width: 20px
+  text-align: center

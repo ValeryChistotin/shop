@@ -1,0 +1,23 @@
+extends layout 
+
+block content
+  section.section1-login
+    .login-form__logo: a.login-form__logo--link(href="/home") sh
+    form.login-form--register(method='POST', action='/users/register')
+      h2.login-form__title register
+      .form-group
+        label.form-group__text(for="username") username
+        input.form-group__input(type="text" name="username" id="username")
+      .form-group
+        label.form-group__text(for="mail") e-mail
+        input.form-group__input(type="text" name="mail" id="mail")
+      .form-group
+        label.form-group__text(for="address") address
+        input.form-group__input(type="text" name="address" id="address")
+      .form-group
+        label.form-group__text(for="password") password
+        input.form-group__input(type="text" name="password" id="password")
+      .form-group
+        label.form-group__text(for="password2") password2
+        input.form-group__input(type="text" name="password2" id="password2")
+      button.login-form__button register

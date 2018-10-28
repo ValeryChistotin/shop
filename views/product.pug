@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  .product-wrapper
+    if good[0]
+      form(method="POST")
+        input(name="name" class="product-input" value=good[0].name[0])
+        input(name="id" class="product-input" value=good[0].id_productCatalog)
+        input(name="img" class="product-input" value=good[0].img)
+        img(src="../img/" + good[0].img + ".jpg", width="400")
+        p= good[0].description
+        .characteristics-wrapper
+            each charcteristic in good
+              div.characteristic
+                h4.product-char#product--chars= charcteristic.name[1]
+                p= charcteristic.value
+                span.price= charcteristic.price
+        if user
+          button.btn-buy to basket
+        else
+          a.button-primary(href="/users/login") Login to buy
+    else
+      h2 There is no description yet

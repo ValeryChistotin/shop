@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h2 Computers
+  .goods
+      each good in goods
+        div.good
+          .good__img
+          h4.good__title= good.productName
+          p.good__description= good.productDescription
+          span.good__price= good.price

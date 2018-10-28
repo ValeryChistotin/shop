@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h2 Laptops
+  .goods
+      each good in goods
+        div.good
+          .good__img: img(src="../img/" + good.img + ".jpg" width="200")
+          a(href="/laptops/" + good.id_productCatalog).good__title= good.name
+          p.good__description= good.description
+          span.good__price= good.price

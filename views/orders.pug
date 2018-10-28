@@ -1,0 +1,30 @@
+extends layout
+
+block content
+
+  if user
+    section.section1-basket
+      .greeting
+        h2.greeting__title--basket your purchases
+        p.greeting__description--basket Items you have already ordered
+    
+    section.section2-basket
+      .products
+        .product
+          .section__img product
+          .section__title title
+          .section__price price
+          .section__total total
+          .section__status status
+        each order in orders
+          .product
+            .product__img
+            .section__title= order.name
+            .product__price= order.price
+            .product__total= order['total cost']
+            .product__status= order.nameOrderStatus
+  else
+    section.section1-basket
+      .error-login-wrapper
+        h2 You should log in first
+        button.button-primary: a(href="users/login") login

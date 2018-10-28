@@ -1,0 +1,15 @@
+extends layout 
+
+block content
+  section.section1-login
+    .login-form__logo: a.login-form__logo--link(href="/home") sh
+    form.login-form(method='POST', action='/users/login')
+      h2.login-form__title sign in
+      .form-group
+        label.form-group__text(for="username") username
+        input.form-group__input(type="text" name="username" id="username")
+      .form-group
+        label.form-group__text(for="password") password
+        input.form-group__input(type="text" name="password" id="password")
+      button.login-form__button log in
+      a(href="/users/register").login-form__note I don't have an account
